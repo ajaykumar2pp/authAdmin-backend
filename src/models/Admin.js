@@ -17,7 +17,7 @@ const adminSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Address is required']
     },
-});
+}, {timestamps:true});
 
 const Admin = mongoose.model('Admin', adminSchema);
 export default Admin;
