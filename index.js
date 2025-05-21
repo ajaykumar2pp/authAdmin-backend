@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from 'dotenv';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import connectDB from "./src/config/db.js";
 import authRoutes from './src/routes/authRoutes.js';
 import adminRoutes from './src/routes/adminRoutes.js';
@@ -16,6 +17,7 @@ const app = express();
 
 
 // Global Middlewares
+app.use(cookieParser())
 app.use(cors({
     origin: process.env.FRONTEND_URL || '*', 
     credentials: true
