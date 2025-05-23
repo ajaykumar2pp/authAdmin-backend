@@ -6,8 +6,8 @@ const router = express.Router();
 
 router.post("/register", register);
 router.post("/login", login);
-router.post("/2fa/verify", verify2FA);
-router.post("/2fa/generate", isAuthenticated, generate2FA);
+router.get("/2fa/generate", isAuthenticated, generate2FA);
+router.post("/2fa/verify",isAuthenticated, verify2FA);
 router.get("/me", isAuthenticated, getUserProfile);
 router.post("/logout", logout);
 

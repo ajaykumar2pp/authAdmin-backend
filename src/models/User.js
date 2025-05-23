@@ -14,13 +14,16 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Password is required']
     },
-    twoFactoreEnabled: {
+    twoFactorEnabled: {
         type: Boolean,
         default: false
     },
     twoFactorSecret: {
         type: String,
         default: ""
+    },
+    lastUsedOtp: {
+        type: String
     },
     createdAt: {
         type: Date,
